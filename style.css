@@ -675,7 +675,6 @@ body.barber_version .sidebar-nav li a.active{
   position: relative;
   overflow: hidden;
   margin: 0 auto;
-  cursor: crosshair;
   -webkit-transition: all ease-in-out 0.4s;
   transition: all ease-in-out 0.4s;
 }
