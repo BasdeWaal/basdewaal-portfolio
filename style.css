@@ -455,7 +455,7 @@ li.social-links a {
 
 
 body.barber_version .sidebar-nav li a.active{
-	background: #bb9d52;
+	background: #99896e;
 	color: #ffffff;
 }
 
@@ -493,7 +493,7 @@ body.barber_version .sidebar-nav li a.active{
 }
 
 #full-width .owl-dots .owl-dot.active span {
-	background: #bb9d52;
+	background: #99896e;
 }
 
 
@@ -821,8 +821,8 @@ body.barber_version .sidebar-nav li a.active{
 .desc {
     padding: 30px;
     position: relative;
-    background: #bb9d52;
-    border: 1px solid #bb9d52;
+    background: #99896e;
+    border: 1px solid #99896e;
 	border-radius: 10px;
 }
 
@@ -1016,7 +1016,7 @@ body.barber_version .about-tab .nav-tabs > li a:hover{
 }
 .about-tab .nav-tabs > li.active > a{
 	border: none;
-	background: #bb9d52;
+	background: #99896e;
 	color: #ffffff;
 }
 
@@ -2126,7 +2126,7 @@ select.mobile-device {
 }
 
 .footer-distributed .footer-company-name a:hover{
-	color: #bb9d52;
+	color: #99896e;
 }
 
 
@@ -2212,7 +2212,7 @@ select.mobile-device {
     right: 0;
     bottom: 0;
     left: 0;
-    background: #bb9d52;
+    background: #99896e;
     z-index: 11000;
     position: fixed;
     display: block
@@ -2323,7 +2323,7 @@ select.mobile-device {
 }
 
 .all-page-bar .title .breadcrumb .active{
-	color: #bb9d52;
+	color: #99896e;
 }
 
 body.barber_version .service-wrap:hover{
@@ -2350,7 +2350,7 @@ body.barber_version .service-wrap:hover{
 	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(254,254,253,0) 1%, rgba(188,158,84,1) 99%, rgba(187,157,82,1) 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(254,254,253,0) 1%,rgba(188,158,84,1) 99%,rgba(187,157,82,1) 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(254,254,253,0) 1%,rgba(188,158,84,1) 99%,rgba(187,157,82,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+,
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#bb9d52',GradientType=0 ); /* IE6-9 */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#99896e',GradientType=0 ); /* IE6-9 */
 }
 
 body.barber_version .dev-list .widget:hover .hover-br .social-up-hover{
@@ -2379,7 +2379,7 @@ body.barber_version .dev-list .widget:hover .hover-br .social-up-hover .footer-s
 
 .appointment-left h2{
 	font-size: 38px;
-	color: #bb9d52;
+	color: #99896e;
 	font-weight: 700;
 }
 
