@@ -41,14 +41,14 @@ $(document).ready(function() {
             mobile: true
         }
     );
-    wow.init();
+    wow.init();/*
 
     /* ==============================================
       Sidebar show and hide
        =============================================== 
     $(".menu-btn").on('click',function(i){
         $("body").toggleClass("sidebar_closed");
-    });
+    });*/
 
 
     /* --------------------------------------------------------
