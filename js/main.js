@@ -121,7 +121,7 @@ $(document).ready(function() {
 
     /* ------------------------------------- */
     /* Animated progress bars
-     /* ------------------------------------- */
+     /* ------------------------------------- 
     'use strict';
 
     var waypoints = $('.progress_container').waypoint(function() {
@@ -130,5 +130,5 @@ $(document).ready(function() {
         });
     },{
         offset: '50%'
-    });
+    });*/
 
