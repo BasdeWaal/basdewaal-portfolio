@@ -455,10 +455,9 @@ li.social-links a {
 
 
 body.barber_version .sidebar-nav li a.active{
-	background: #ffffff;
-	color: #000000;
+	background: #99896e;
+	color: #ffffff;
 }
-
 
 .side-top{
 	position: absolute;
@@ -493,7 +492,7 @@ body.barber_version .sidebar-nav li a.active{
 }
 
 #full-width .owl-dots .owl-dot.active span {
-	background: #bb9d52;
+	background: #99896e;
 }
 
 
@@ -918,8 +917,8 @@ body.barber_version .sidebar-nav li a.active{
 .desc {
     padding: 30px;
     position: relative;
-    background: #bb9d52;
-    border: 1px solid #bb9d52;
+    background: #99896e;
+    border: 1px solid #99896e;
 	border-radius: 10px;
 }
 
@@ -1113,7 +1112,7 @@ body.barber_version .about-tab .nav-tabs > li a:hover{
 }
 .about-tab .nav-tabs > li.active > a{
 	border: none;
-	background: #bb9d52;
+	background: #99896e;
 	color: #ffffff;
 }
 
@@ -2223,7 +2222,7 @@ select.mobile-device {
 }
 
 .footer-distributed .footer-company-name a:hover{
-	color: #bb9d52;
+	color: #99896e;
 }
 
 
@@ -2309,7 +2308,7 @@ select.mobile-device {
     right: 0;
     bottom: 0;
     left: 0;
-    background: #bb9d52;
+    background: #99896e;
     z-index: 11000;
     position: fixed;
     display: block
@@ -2420,7 +2419,7 @@ select.mobile-device {
 }
 
 .all-page-bar .title .breadcrumb .active{
-	color: #bb9d52;
+	color: #99896e;
 }
 
 body.barber_version .service-wrap:hover{
@@ -2476,7 +2475,7 @@ body.barber_version .dev-list .widget:hover .hover-br .social-up-hover .footer-s
 
 .appointment-left h2{
 	font-size: 38px;
-	color: #bb9d52;
+	color: #99896e;
 	font-weight: 700;
 }
 
