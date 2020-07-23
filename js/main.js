@@ -75,7 +75,7 @@ $(document).ready(function() {
             // use element for option
             columnWidth: '.grid-sizer'
         }
-    });
+    });*/
 
     $grid.imagesLoaded().progress( function() {
         $grid.isotope('layout');
