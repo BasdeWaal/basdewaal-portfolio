@@ -63,7 +63,7 @@ $(document).ready(function() {
 
     /* ==============================================
      portfolio-filter
-     =============================================== */
+     =============================================== 
 
     // filter items on button click
 
@@ -86,7 +86,7 @@ $(document).ready(function() {
         $(this).closest('li').addClass('active');
         var filterValue = $(this).attr('data-filter');
         $grid.isotope({ filter: filterValue });
-    });
+    });*/
 
     /* ==============================================
      pop up
