@@ -94,7 +94,7 @@ $(document).ready(function() {
 
     // portfolio-pop up
 
-    $('.img-container').magnificPopup({
+    /*$('.img-container').magnificPopup({
         delegate: 'a',
         type: 'image',
         tLoading: 'Loading image #%curr%...',
