@@ -117,7 +117,7 @@ $(document).ready(function() {
                 return element.find('img');
             }
         }
-    });*/
+    });
 
     /* ==============================================
      OWL CAROUSEL
