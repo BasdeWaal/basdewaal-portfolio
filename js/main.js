@@ -63,7 +63,7 @@ $(document).ready(function() {
 
     /* ==============================================
      portfolio-filter
-     =============================================== 
+     ===============================================*/ 
 
     // filter items on button click
 
@@ -75,7 +75,7 @@ $(document).ready(function() {
             // use element for option
             columnWidth: '.grid-sizer'
         }
-    });*/
+    });
 
     $grid.imagesLoaded().progress( function() {
         $grid.isotope('layout');
