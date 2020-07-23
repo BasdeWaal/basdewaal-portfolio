@@ -119,17 +119,6 @@ $(document).ready(function() {
         }
     });
 
-    /* ==============================================
-     OWL CAROUSEL
-     =============================================== 
-    $('.testimonial_carousel').slick({
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        arrows: false
-    });*/
-
-
     /* ------------------------------------- */
     /* Animated progress bars
      /* ------------------------------------- */
