@@ -193,6 +193,7 @@ body.main .footer {
 
 body.main #wrapper.toggled #sidebar-wrapper {
     width: 280px;
+    top: 50%;
 }
 
 body.main #page-content-wrapper {
