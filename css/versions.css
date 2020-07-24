@@ -148,7 +148,7 @@ body.main #wrapper.toggled {
 }
 
 
-body.barber_version #wrapper.toggled .sidebar-nav ul{
+body.barber_version #wrapper.toggled .sidebar-nav{
     padding-left: 280px;
     top: 50%;
 }
