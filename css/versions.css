@@ -367,8 +367,8 @@ body.main .dev-list .widget-title {
     body.main #page-content-wrapper {
         padding: 0;
         position: relative;
-	padding-top: 30px; /* ------------------------------*/
-        padding-bottom: 30px;/* ----------------------------*/
+	padding-top: 60px; /* ------------------------------*/
+        padding-bottom: 60px;/* ----------------------------*/
     }
     body.main #wrapper.toggled #page-content-wrapper {
         position: relative;
