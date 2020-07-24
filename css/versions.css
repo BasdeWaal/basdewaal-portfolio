@@ -23,22 +23,22 @@
     1. BARBER
 -------------------------------------------------------------------*/
 
-body.barber_version .participate-wrap small,
-body.barber_version .message-box h4,
-body.barber_version .customwidget li i,
-body.barber_version .navbar-nav span {
+body.main .participate-wrap small,
+body.main .message-box h4,
+body.main .customwidget li i,
+body.main .navbar-nav span {
     color: #424145 !important;
 }
 
-body.barber_version .sidebar-nav li:hover a {
+body.main .sidebar-nav li:hover a {
     background: #bb9d52;
 	color: #ffffff;
 }
 
-body.barber_version .lead strong,
-body.barber_version .icon-wrapper:hover a,
-body.barber_version a:hover,
-body.barber_version a:focus {
+body.main .lead strong,
+body.main .icon-wrapper:hover a,
+body.main a:hover,
+body.main a:focus {
     color: #893d00;
 }
 
@@ -47,76 +47,76 @@ body.barber_version a:focus {
 GRADIENTS 
 **************************************/
 
-body.barber_version .icon_wrap:hover,
-body.barber_version .nav-pills > li.active > a,
-body.barber_version .nav-pills > li.active > a:focus,
-body.barber_version .nav-pills > li.active > a:hover,
-body.barber_version .icon-wrapper:hover i{
+body.main .icon_wrap:hover,
+body.main .nav-pills > li.active > a,
+body.main .nav-pills > li.active > a:focus,
+body.main .nav-pills > li.active > a:hover,
+body.main .icon-wrapper:hover i{
     color: #ffffff;
     background: #bb9d52;   
 }
 
-body.barber_version .grd1 {
+body.main .grd1 {
 	color: #ffffff;
     background: #111111;
 }
 
-body.barber_version .dmtop,
-body.barber_version .icon_wrap,
-body.barber_version .dmtop:hover,
-body.barber_version .features-right li:hover i,
-body.barber_version .features-left li:hover i,
-body.barber_version .nav-pills > li:hover > a,
-body.barber_version .nav-pills > li:focus > a,
-body.barber_version .nav-pills > li.active > a,
-body.barber_version .nav-pills > li.active > a:focus,
-body.barber_version .nav-pills > li.active > a:hover,
-body.barber_version .divider-bar,
-body.barber_version .owl-next:hover i,
-body.barber_version .owl-prev:hover i,
-body.barber_version .icon-wrapper:hover i:hover{
+body.main .dmtop,
+body.main .icon_wrap,
+body.main .dmtop:hover,
+body.main .features-right li:hover i,
+body.main .features-left li:hover i,
+body.main .nav-pills > li:hover > a,
+body.main .nav-pills > li:focus > a,
+body.main .nav-pills > li.active > a,
+body.main .nav-pills > li.active > a:focus,
+body.main .nav-pills > li.active > a:hover,
+body.main .divider-bar,
+body.main .owl-next:hover i,
+body.main .owl-prev:hover i,
+body.main .icon-wrapper:hover i:hover{
     background-position: 100px;
     color: #ffffff;
     background: #111111;
 }
 
-body.barber_version .grd1:hover,
-body.barber_version .grd1:focus {
+body.main .grd1:hover,
+body.main .grd1:focus {
 	color: #ffffff;
     background: #bb9d52;
 }
 
-body.barber_version .cac:hover{
+body.main .cac:hover{
 	background: #bb9d52;
 }
 
-body.barber_version .effect-1:after {
+body.main .effect-1:after {
     box-shadow: 0 0 0 2px #bb9d52;
 }
 
-body.barber_version {    
+body.main {    
     overflow-x: hidden;
 }
 
-body.barber_version .first-section .grd1 {
+body.main .first-section .grd1 {
     border: 0 !important;
     padding: 17px 40px;
     font-size: 15px;
 	font-weight: 600;
 }
 
-body.barber_version .container-fluid {
+body.main .container-fluid {
     max-width: 1280px;
 }
 
-body.barber_version .section.lb {
+body.main .section.lb {
     background-color: #f9f9f9;
 }
 
 
 /* Toggle Styles */
 
-body.barber_version .menuopener {
+body.main .menuopener {
     position: absolute;
     top: 15px;
     left: 15px;
@@ -131,11 +131,11 @@ body.barber_version .menuopener {
     text-align: center;
 }
 
-body.barber_version .menuopener:hover{
+body.main .menuopener:hover{
 	background-color: #111111;
 }
 
-body.barber_version #wrapper {
+body.main #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -143,11 +143,11 @@ body.barber_version #wrapper {
     transition: all 0.5s ease;
 }
 
-body.barber_version #wrapper.toggled {
+body.main #wrapper.toggled {
     padding-left: 280px;
 }
 
-body.barber_version #sidebar-wrapper {
+body.main #sidebar-wrapper {
     z-index: 1000;
     border-right: 1px dashed rgba(255, 255, 255, 0.1);
     position: fixed;
@@ -163,53 +163,53 @@ body.barber_version #sidebar-wrapper {
     transition: all 0.5s ease;
 }
 
-body.barber_version .contact_form {
+body.main .contact_form {
     background-color: #111111;
     border: 0;
     border-bottom: 2px solid #1f1f1f !important;
 }
 
-body.barber_version .contact_form .form-control {
+body.main .contact_form .form-control {
     background-color: #000;
     border: 0;
     border-bottom: 2px solid #1f1f1f !important;
 }
 
-body.barber_version .contact_form .btn {
+body.main .contact_form .btn {
     border: 0 !important;
 }
 
-body.barber_version .contact_form .btn.subt{
+body.main .contact_form .btn.subt{
 	background: #bb9d52;
 }
 
-body.barber_version .section.db,
-body.barber_version .copyrights,
-body.barber_version .cac,
-body.barber_version .footer {
+body.main .section.db,
+body.main .copyrights,
+body.main .cac,
+body.main .footer {
     background-color: #000000;
 }
 
-body.barber_version #wrapper.toggled #sidebar-wrapper {
+body.main #wrapper.toggled #sidebar-wrapper {
     width: 280px;
 }
 
-body.barber_version #page-content-wrapper {
+body.main #page-content-wrapper {
     width: 100%;
     position: absolute;
     padding: 15px;
 }
 
-body.barber_version #wrapper.toggled #page-content-wrapper {
+body.main #wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -280px;
 }
 
-body.barber_version .first-section h2 strong {
+body.main .first-section h2 strong {
     font-size: 68px;
 }
 
-body.barber_version .first-section h2 {
+body.main .first-section h2 {
     font-size: 52px;
 }
 
@@ -217,22 +217,22 @@ body.barber_version .first-section h2 {
 /* Sidebar Styles */
 
 
-body.barber_version .container-fluid {
+body.main .container-fluid {
     padding-left: 30px;
     padding-right: 30px;
 }
 
-body.barber_version .logo-sidebar {
+body.main .logo-sidebar {
     display: block;
     margin: 0 0 2em;
 }
 
-body.barber_version .sidebar-nav li {
+body.main .sidebar-nav li {
     line-height: 45px;
 	margin-bottom: 15px;
 }
 
-body.barber_version .sidebar-nav li a {
+body.main .sidebar-nav li a {
     display: block;
     text-decoration: none;
     color: #999999;
@@ -245,40 +245,40 @@ body.barber_version .sidebar-nav li a {
 	line-height: 21px;
 }
 
-body.barber_version .sidebar-nav li a:hover {
+body.main .sidebar-nav li a:hover {
     text-decoration: none;
     color: #fff;
 }
 
-body.barber_version .sidebar-nav li a:active,
-body.barber_version .sidebar-nav li a:focus {
+body.main .sidebar-nav li a:active,
+body.main .sidebar-nav li a:focus {
     text-decoration: none;
 }
 
-body.barber_version .section-title h3 {
+body.main .section-title h3 {
     font-size: 34px;
     padding: 10px 0 0;
     font-weight: bold;
     line-height: 1 !important;
 }
 
-body.barber_version .section-title small {
+body.main .section-title small {
     font-size: 15px;
 }
 
-body.barber_version .section-title hr {
+body.main .section-title hr {
     width: 100px;
     margin: 0 auto 30px !important;
     padding: 1px;
     background-color: #111;
 }
 
-body.barber_version hr.invis4 {
+body.main hr.invis4 {
     margin: 90px 0 0;
     border: 0;
 }
 
-body.barber_version .service-wrap {
+body.main .service-wrap {
     margin: 30px 0;
 	padding: 20px;
     display: block;
@@ -290,32 +290,32 @@ body.barber_version .service-wrap {
 	transition: all 1s ease-in-out;
 }
 
-body.barber_version .service-wrap h4 {
+body.main .service-wrap h4 {
     font-weight: bold;
     text-transform: capitalize;
     font-size: 20px;
 }
 
-body.barber_version .service-wrap p,
-body.barber_version .service-wrap p {
+body.main .service-wrap p,
+body.main .service-wrap p {
     margin-bottom: 0;
 }
 
-body.barber_version .service-wrap img {
+body.main .service-wrap img {
     max-width: 120px;
     margin: 0 30px 0 0;
 }
 
-body.barber_version .dev-list .widget p {
+body.main .dev-list .widget p {
     margin: 0;
     padding: 5px 0 15px;
 }
 
-body.barber_version .dev-list img {
+body.main .dev-list img {
     width: 100%;
 }
 
-body.barber_version .dev-list .widget {
+body.main .dev-list .widget {
     padding: 30px;
 	margin-bottom: 30px;
     border: 1px solid #ededed;
@@ -323,52 +323,52 @@ body.barber_version .dev-list .widget {
 	box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
 }
 
-body.barber_version .dev-list .widget h3 {
+body.main .dev-list .widget h3 {
     font-size: 21px;
     padding: 0 0 5px;
     margin: 0;
     line-height: 1 !important;
 }
 
-body.barber_version .dev-list .grd1 {
+body.main .dev-list .grd1 {
     margin: 0 2px;
     border-radius: 10px;
 }
 
-body.barber_version .dev-list .widget-title {
+body.main .dev-list .widget-title {
     padding: 20px 0 10px;
     margin: 0;
     line-height: 1 !important;
 }
 
 @media(max-width:768px) {
-    body.barber_version .menuopener {
+    body.main .menuopener {
         display: block;
     }
-    body.barber_version .first-section h2 strong,
-    body.barber_version .first-section h2 {
+    body.main .first-section h2 strong,
+    body.main .first-section h2 {
         font-size: 36px;
     }
 }
 
 @media(min-width:768px) {
-    body.barber_version #wrapper {
+    body.main #wrapper {
         padding-left: 285px;
     }
-    body.barber_version #wrapper.toggled {
+    body.main #wrapper.toggled {
         padding-left: 0;
     }
-    body.barber_version #sidebar-wrapper {
+    body.main #sidebar-wrapper {
         width: 285px;
     }
-    body.barber_version #wrapper.toggled #sidebar-wrapper {
+    body.main #wrapper.toggled #sidebar-wrapper {
         width: 0;
     }
-    body.barber_version #page-content-wrapper {
+    body.main #page-content-wrapper {
         padding: 0;
         position: relative;
     }
-    body.barber_version #wrapper.toggled #page-content-wrapper {
+    body.main #wrapper.toggled #page-content-wrapper {
         position: relative;
         margin-right: 0;
     }
