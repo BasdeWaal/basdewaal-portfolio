@@ -354,6 +354,8 @@ body.main .dev-list .widget-title {
 @media(min-width:768px) {
     body.main #wrapper {
         padding-left: 285px;
+    	padding-top: 30px;
+        padding-bottom 30px;
     }
     body.main #wrapper.toggled {
         padding-left: 0;
