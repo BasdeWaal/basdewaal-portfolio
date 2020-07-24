@@ -2258,7 +2258,7 @@ body.main .dev-list .widget:hover .hover-br .social-up-hover .footer-social {
 
 /*------------------------------------------------------------------
     Menu Button
--------------------------------------------------------------------*/
+-------------------------------------------------------------------
 
 @media (max-width: 768px) {
   .menu-btn {
@@ -2314,7 +2314,7 @@ body.main .dev-list .widget:hover .hover-br .social-up-hover .footer-social {
   -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.09);
           box-shadow: 0 0 2px rgba(0, 0, 0, 0.09);
   color: #18181c;
-}
+}*/
 
 
 
