@@ -148,8 +148,9 @@ body.main #wrapper.toggled {
 }
 
 
-body.barber_version #wrapper.toggled .sidebar-nav{
+body.barber_version .sidebar-nav #wrapper.toggled {
     padding-left: 280px;
+    position: fixed;
     top: 50%;
 }
 
@@ -198,7 +199,6 @@ body.main .footer {
 
 body.main #wrapper.toggled #sidebar-wrapper {
     width: 280px;
-    top: 50%;
 }
 
 body.main #page-content-wrapper {
