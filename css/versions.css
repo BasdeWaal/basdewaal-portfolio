@@ -145,6 +145,11 @@ body.main #wrapper {
 
 body.main #wrapper.toggled {
     padding-left: 280px;
+}
+
+
+body.barber_version #wrapper.toggled .sidebar-nav ul{
+    padding-left: 280px;
     top: 50%;
 }
 
