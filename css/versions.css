@@ -147,13 +147,6 @@ body.main #wrapper.toggled {
     padding-left: 280px;
 }
 
-
-body.barber_version .sidebar-nav #wrapper.toggled {
-    padding-left: 280px;
-    position: fixed;
-    top: 50%;
-}
-
 body.main #sidebar-wrapper {
     z-index: 1000;
     border-right: 1px dashed rgba(255, 255, 255, 0.1);
