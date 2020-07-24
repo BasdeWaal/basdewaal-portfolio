@@ -456,9 +456,6 @@
 		border-right: none;
 		height: 100vh; /* For 100% screen height */
 	}
-	body.main #wrapper.toggled{
-		position: fixed;
-	}
 	body.main .container-fluid{
 		padding: 0px;
 	}
