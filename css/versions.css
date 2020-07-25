@@ -145,9 +145,6 @@ body.main #wrapper {
 
 body.main #wrapper.toggled {
     padding-left: 280px;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
 }
 
 body.main #sidebar-wrapper {
@@ -195,6 +192,9 @@ body.main .footer {
 
 body.main #wrapper.toggled #sidebar-wrapper {
     width: 280px;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
 }
 
 body.main #page-content-wrapper {
