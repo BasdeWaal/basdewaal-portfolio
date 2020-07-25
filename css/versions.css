@@ -192,10 +192,6 @@ body.main .footer {
 
 body.main #wrapper.toggled #sidebar-wrapper {
     width: 280px;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0px;
-    left: 0px;
 }
 
 body.main #page-content-wrapper {
