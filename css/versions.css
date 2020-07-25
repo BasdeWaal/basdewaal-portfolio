@@ -120,7 +120,7 @@ body.main .menuopener {
    /* position: absolute;*/
     position: fixed;
     top: 15px;
-    left: 15px;
+   /* left: 15px;*/
     background-color: #bb9d52;
     z-index: 111;
     color: #fff !important;
