@@ -118,8 +118,7 @@ body.main .section.lb {
 
 body.main .menuopener {
    /* position: absolute;*/
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
+    position: fixed;
     top: 15px;
     left: 15px;
     background-color: #bb9d52;
