@@ -145,6 +145,8 @@ body.main #wrapper {
 
 body.main #wrapper.toggled {
     padding-left: 280px;
+    top: 0px;
+    posistion: stiky;
 }
 
 body.main #sidebar-wrapper {
