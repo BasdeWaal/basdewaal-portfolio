@@ -343,7 +343,6 @@
     }
 	body.main #sidebar-wrapper{
 		border-right: none;
-		height: 100vh; /* For 100% screen height */
 	}
 	body.main .container-fluid{
 		padding: 0px;
@@ -454,7 +453,6 @@
     }
 	body.main #sidebar-wrapper{
 		border-right: none;
-		height: 100vh; /* For 100% screen height */
 	}
 
 	body.main .container-fluid{
