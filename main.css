@@ -16,6 +16,20 @@ body {
     line-height: 1.80857;
 }
 
+.img_card .content_section .content_box {
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-right: -75px;
+    z-index: 999;
+    top: 0;
+    width: auto;
+    bottom: 0;
+    padding: 15px;
+    min-height: 500px;
+    background-color: #ffffff;
+}
+
 body.demos .section {
     background: url(images/bg.png) repeat top center #f2f3f5;
 }
