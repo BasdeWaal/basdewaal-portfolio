@@ -30,6 +30,10 @@ body {
     background-color: #ffffff;
 }
 
+.img_card .content_section .content_box .content_box_inner {
+  padding: 25px 20px 25px 15px;
+}
+
 body.demos .section {
     background: url(images/bg.png) repeat top center #f2f3f5;
 }
