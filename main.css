@@ -673,9 +673,8 @@ body.main .sidebar-nav li a.active{
   transition: all ease-in-out 0.4s;
   opacity: 0;
 }
-.zoom{
-}
-.project_box_one:hover zoom img {
+
+.project_box_one:hover img {
   /* IE 9 */
   -webkit-transform: scale(1.1);
   /* Safari */
