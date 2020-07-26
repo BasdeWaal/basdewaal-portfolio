@@ -673,7 +673,15 @@ body.main .sidebar-nav li a.active{
   transition: all ease-in-out 0.4s;
   opacity: 0;
 }
-
+.project_box_one:hover img {
+  /* IE 9 */
+  -webkit-transform: scale(1.1);
+  /* Safari */
+  transform: scale(1.1);
+  /* Standard syntax */
+  -webkit-transition: all ease-in-out 0.4s;
+  transition: all ease-in-out 0.4s;
+}
 .project_box_one:hover .product_info {
   opacity: 1;
 }
