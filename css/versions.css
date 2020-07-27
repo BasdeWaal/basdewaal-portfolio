@@ -321,12 +321,12 @@ body.main .dev-list .widget-title {
     margin: 0;
     line-height: 1 !important;
 }
-
+/*
 body.main .dev-list .widget-title {
     padding: 20px 0 10px;
     margin: 0;
     line-height: 1 !important; 
-
+*/
 @media(max-width:768px) {
     body.main .menuopener {
         display: block;
