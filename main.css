@@ -638,7 +638,7 @@ body.main .sidebar-nav li a.active{
   -webkit-transition: all ease-in-out 0.4s;
   transition: all ease-in-out 0.4s;
 }
-.project_box_one .product_info {
+.project_box_one .project_box_one_static .product_info {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -650,19 +650,19 @@ body.main .sidebar-nav li a.active{
   transition: all ease-in-out 0.4s;
   opacity: 0;
 }
-.project_box_one .product_info .product_info_text {
+.project_box_one .project_box_one_static .product_info .product_info_text {
   display: table;
   table-layout: fixed;
   height: 100%;
   width: 100%;
   position: relative;
 }
-.project_box_one .product_info .product_info_text .product_info_text_inner {
+.project_box_one .project_box_one_static .product_info .product_info_text .product_info_text_inner {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
 }
-.project_box_one .product_info .product_info_text .product_info_text_inner h4 {
+.project_box_one .project_box_one_static .product_info .product_info_text .product_info_text_inner h4 {
   color: #ffffff;
   font-size: 14px;
   text-transform: capitalize;
@@ -673,7 +673,7 @@ body.main .sidebar-nav li a.active{
   opacity: 0;
   margin-bottom: 5px;
 }
-.project_box_one .product_info .product_info_text .product_info_text_inner i {
+.project_box_one .project_box_one_static .product_info .product_info_text .product_info_text_inner i {
   color: #ffffff;
   font-size: 20px;
   margin-bottom: 15px;
@@ -692,15 +692,15 @@ body.main .sidebar-nav li a.active{
   -webkit-transition: all ease-in-out 0.4s;
   transition: all ease-in-out 0.4s;
 }
-.project_box_one:hover .product_info {
+.project_box_one:hover .project_box_one_static:hover .product_info {
   opacity: 1;
 }
-.project_box_one:hover .product_info .product_info_text_inner h4 {
+.project_box_one:hover .project_box_one_static:hover .product_info .product_info_text_inner h4 {
   -webkit-transform: translateY(0);
   transform: translateY(0);
   opacity: 1;
 }
-.project_box_one:hover .product_info .product_info_text_inner i {
+.project_box_one:hover .project_box_one_static:hover .product_info .product_info_text_inner i {
   -webkit-transform: translateY(0);
   transform: translateY(0);
   opacity: 1;
