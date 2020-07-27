@@ -272,13 +272,6 @@ a img.aligncenter {
     HEADER
 -------------------------------------------------------------------*/
 
-.megamenu .nav,
-.megamenu .collapse,
-.megamenu .dropup,
-.megamenu .dropdown {
-    position: static;
-}
-
 .megamenu .container-fluid {
     position: relative;
 }
