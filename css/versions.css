@@ -322,7 +322,7 @@ body.main .dev-list .widget-title {
     line-height: 1 !important;
 }
 
-body.barber_version .dev-list .widget-title {
+body.main .dev-list .widget-title {
     padding: 20px 0 10px;
     margin: 0;
     line-height: 1 !important; 
