@@ -761,7 +761,7 @@ body.main .sidebar-nav li a.active{
 .project_box_one_static:hover .product_info .product_info_text_inner i {
   -webkit-transform: translateY(0);
   transform: translateY(0);
-  opacity: 1;
+  opacity: .75;
 }
 
 .mfp-title {
