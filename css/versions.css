@@ -208,14 +208,14 @@ body.main .logo-sidebar {
     margin: 0 0 2em;
 }
 
-body.main .name-sidebar {
-    margin: 0 0 5em;
-    color: #000000;
+body.main .name-sidebar h3 {
+    margin-top: 5px;
+    color: #fff;
 }
 
 body.main .sidebar-nav li {
     line-height: 45px;
-	margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 body.main .sidebar-nav li a {
