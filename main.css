@@ -751,7 +751,7 @@ body.main .sidebar-nav li a.active{
   opacity: 0;
 }
 .project_box_one_static:hover .product_info {
-  opacity: 0.75;
+  opacity: 0.5;
 }
 .project_box_one_static:hover .product_info .product_info_text_inner h4 {
   -webkit-transform: translateY(0);
