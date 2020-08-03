@@ -64,7 +64,7 @@
                                 </div>
                             </div>
                             <p>
-                                This is the first game I have ever made. When I decided to go back to college, I attended an open day at the HKU (March). What drew me to the HKU is that as a developer you collaborate with game art, game design and interaction design. However, to be admitted you had to submit a (digital) game and a portfolio. Also a limited number of students are accepted at the HKU, about 100 people for 4 different studies. The last moment to hand in my game and portfolio was in May. So I had a few months to learn to code and make some kind of game.
+                                This is the first game I have ever made. When I decided to go back to college, I attended an open day in March 2016 at the HKU. What made me decide to go for HKU is that here the study has a combination with not only design but also with art and interaction design. The three most important elements of a good game at least in my opinion. The admission procedure asks from every new applicant to submit a (digital) game and a portfolio. The reason is that every year only a limited number of students is accepted at the HKU, about 100 for the total of  4 different studies. So being a novice at that moment I only had a few months to hand in my game and portfolio. This game was my first effort and made that I was selected.
                             </p>
                         </div>
                     </div>
@@ -72,8 +72,7 @@
                 <div class="container-fluid">
                     <div class="row no-gutters">
                         <p>
-                            As for the game, it is quite simple. The player is attracted to the planet and can move around it. During the time, stars spawn. Try to pick up as much as possible within the match time. In addition, you have a speed boost that you can pick up to go faster and there is a potion bottle that you have to avoid.
-                            This project is not the most impressive and the best in quality, but it shows where I started. It also shows the improvement i have made along my journey.
+                            As for the game, it is quite simple. The player is attracted to the planet and can move around it. During the time, stars spawn. Try to pick up as much as possible stars within the match time. In addition, you have a speed boost that you can collect to go faster and there is a bottle with potion  that you have to avoid. This project is not the most impressive and the best in quality, but it shows where I started and how I improved during my study over the 4 years.
                         </p>
                     </div>
                 </div>
@@ -94,7 +93,7 @@ public void Attract(Transform body) {
 
     Quaternion targetRotation = Quaternion.FromToRotation (bodyUp,gravityUp) * body.rotation;
     body.rotation = Quaternion.Slerp (body.rotation,targetRotation, 50 * Time.deltaTime);
-    }
+}
 
 void Update () {
     moveDir = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical")).normalized;
