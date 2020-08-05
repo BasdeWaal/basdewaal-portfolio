@@ -64,7 +64,8 @@
                                 </div>
                             </div>
                             <p>
-                                LLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+                                In year 4 we had another project to fill in freely. For this project I looked in which direction I would like to go after my study. The games that I like and are interesting to me are usually multiplayer games. For this project I wanted to focus more on the multiplayer gameplay. I therefore used Photon for this project. This way I didn't have to worry about how the information was synchronized between players and I only had to focus on what information had to be synchronized, Photon does the rest.
+                                To make it more of a challenge, I chose to make it a mobile game. now I need to make sure I don't send too much data back and forth. In order not to avoid the challenge, the game also had to be real-time. So I had to be very careful about the amount of data I sent. Because they usually send more data back and forth. It eventually became a mobile racing game.
                             </p>
                         </div>
                     </div>
@@ -74,11 +75,9 @@
             <!--=================== section start ====================-->
             <div class="section wb">
                 <div class="container-fluid">
-                    <div class="row no-gutters text-center">
+                    <div class="row no-gutters">
                         <p>
-                            LLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
-
-                            Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.
+                            So I wanted some arcady kind of car mechanics. So for this game the car is pulled towards the track but its also possible to hit a ramp and make some air time. Each wheel has his own suspension which makes the car a bit more fun to ride around. The suspension force is being calculated with help of a raycast. The raycast also makes sure the car stays horizontal even when the car makes a jump.
                         </p>
                     </div>
                 </div>
@@ -89,13 +88,53 @@
                 <div class="container-fluid">
                     <div class="row no-gutters">
                         <pre><code>
-p { 
-    color: red;
+private void GetGround(){
+    Vector3 downwards = transform.TransformDirection (-Vector3.up);
+    RaycastHit hit;
+
+    if (Physics.Raycast(transform.position, downwards, out hit, radius + maxSuspension, trackLayer)){
+        grounded = true;
+        jumping = false;
+
+        Vector3 velocityAtTouch = parentRB.GetPointVelocity(hit.point);
+
+        // calculate spring compression / difference in positions divided by total suspension range
+        float compression = hit.distance / (maxSuspension + radius);
+        compression = -compression + 1;
+
+        Vector3 force = -downwards * compression * spring;
+
+        // velocity at point of contact transformed into local space
+        Vector3 t = transform.InverseTransformDirection(velocityAtTouch);
+
+        t.z = 0;
+        t.x = 0;
+
+        // back to world space * -damping
+        Vector3 damping = transform.TransformDirection(t) * -damper;
+        Vector3 finalForce = force + damping;
+
+        // VERY simple turning - force rigidbody in direction of wheel
+        t = parentRB.transform.InverseTransformDirection(velocityAtTouch);
+        t.y = 0;
+        t.z = 0;
+
+        t = transform.TransformDirection(t);
+
+        if (isMine){
+            parentRB.AddForceAtPosition(finalForce + (t), hit.point);
+            GravtyForce(downwards);
+        }
+
+        if (graphic)
+            graphic.position = transform.position + (downwards * (hit.distance - radius));
+    
+    }
+    else{
+        ...
+    }
 }
-body { 
-    background-color: #eee;
-}
-						</code></pre>
+</code></pre>
                     </div>
                 </div>
             </div>
@@ -103,12 +142,42 @@ body {
             <!--=================== section start ====================-->
             <div class="section wb">
                 <div class="container-fluid">
-                    <div class="row no-gutters text-center">
+                    <div class="row no-gutters">
                         <p>
-                            LLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
-
-                            Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.
+                            You can also drift, this causes to turn the tires red (see screenshot). This will give you a small speed boost afterwards. Something similar like the drift mechanic in Mario Kart. To synchronize the player's position and whether he is drifting or not, I used some of the Photon features for sending and receiving data. Everything else is calculated on the client itself and does not need any additional information. Most of the data that's being sent is for calculating the position. Because Photon is not using something like prediction, I need to predict the players position myself (see the editor screenshot - red is the received position and green the predicted position).
                         </p>
+                    </div>
+                </div>
+            </div>
+            <!--=================== section end ====================-->
+            <!--=================== section start ====================-->
+            <div class="section lb">
+                <div class="container-fluid">
+                    <div class="row no-gutters">
+                        <pre><code>
+
+public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info){
+    if (stream.IsWriting){
+        stream.SendNext(this.RB.position);
+        stream.SendNext(this.RB.rotation);
+        stream.SendNext(this.RB.velocity);
+
+        stream.SendNext(this.moveInputVector);
+        stream.SendNext(this.driftStrenght);
+    }
+    else{
+        networkPosition = (Vector3)stream.ReceiveNext();
+        networkRotation = (Quaternion)stream.ReceiveNext();
+        networkVelocity = (Vector3)stream.ReceiveNext();
+
+        moveInputVector = (Vector3)stream.ReceiveNext();
+        driftStrenght = (float)stream.ReceiveNext();
+
+        lag = Mathf.Abs((float)(PhotonNetwork.Time - info.SentServerTime));
+        networkPosition += (this.RB.velocity * lag);
+    }
+}
+                        </code></pre>
                     </div>
                 </div>
             </div>
