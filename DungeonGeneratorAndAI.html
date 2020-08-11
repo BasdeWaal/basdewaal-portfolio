@@ -74,11 +74,12 @@
             <!--=================== section start ====================-->
             <div class="section wb">
                 <div class="container-fluid">
-                    <div class="row no-gutters text-center">
+                    <div class="row no-gutters ">
                         <p>
-                            LLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
-
-                            Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.
+                            My dungeon generator is based on characters. That means that each piece of my dungeon is linked to a certain character. So characters like ─ │ ┌ ┐ stands for a horizontal dungeon piece a vertical, a corner to right and a corner piece to the left.
+                            Then I had to write out for each character which characters he could have as neighbors. After that, I made a 2d array that represents the dungeon (see images). First I fill the array with the amount of rooms I want to have. The next step is to fill in the rest of the array.
+                            I iterate over each array slot, that is not filled yet, and try to find the best character that fits in that specific array slot according to the neighbor rules we made earlier.
+                            Finally I check if there are any dead ends. If so, I close de dungeon with a dead end prefab and I check if there are unreachable parts in the dungeon and remove those parts.
                         </p>
                     </div>
                 </div>
@@ -89,13 +90,36 @@
                 <div class="container-fluid">
                     <div class="row no-gutters">
                         <pre><code>
-p { 
-    color: red;
+public void InitializeDungeon(){
+    dungeon = new char[mapX, mapY];
+    InitializeWalls();
+
+    for (int y = 1; y < mapY - 1; y++){
+        for (int x = 1; x < mapX - 1; x++){
+            dungeon[x, y] = 'O';
+        }
+    }
+
+    Random.InitState(seed);
+    CreateRooms();
+
+    for (int y = 1; y < mapY - 1; y++){
+        for (int x = 1; x < mapX - 1; x++){
+            if (dungeon[x, y] == '@' || dungeon[x, y] == '˄' || dungeon[x, y] == '˂' || dungeon[x, y] == '˃' || dungeon[x, y] == '˅' || 
+                dungeon[x, y] == '╔' || dungeon[x, y] == '╧' || dungeon[x, y] == '╤' || dungeon[x, y] == '╗' || dungeon[x, y] == '╟' || 
+                dungeon[x, y] == '╢' || dungeon[x, y] == '╚' || dungeon[x, y] == '╝')
+            { //These are the room characters
+                continue;
+            }
+
+            string valid = GetValidCharacters(x, y);
+            dungeon[x, y] = valid[Random.Range(0, valid.Length)];
+        }
+    }
+
+    FillDeadEnds();
 }
-body { 
-    background-color: #eee;
-}
-						</code></pre>
+                        </code></pre>
                     </div>
                 </div>
             </div>
@@ -103,12 +127,36 @@ body {
             <!--=================== section start ====================-->
             <div class="section wb">
                 <div class="container-fluid">
-                    <div class="row no-gutters text-center">
+                    <div class="row no-gutters">
                         <p>
-                            LLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
-
-                            Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.
+                            Regarding the AI ​​I implemented a GOAP (Goal Oriented Action Planning) agent.
+                            How does the algorithm know which actions go together to satisfy a goal? Actions and goals use conditions, which consists of a string and a value. The action 'Attack Ranged' for example has the precondition [ "hasRangedWeapon", true ]. The action 'Equip Ranged Weapon' has the effect [ "hasRangedWeapon", true ]. Thus the algorithm knows to first equip the ranged weapon, and then use it to attack. This leads to natural, dynamic behavior without ever having to code any transitions!
                         </p>
+                    </div>
+                </div>
+            </div>
+            <!--=================== section end ====================-->
+            <!--=================== section start ====================-->
+            <div class="section lb">
+                <div class="container-fluid">
+                    <div class="row no-gutters">
+                        <pre><code>
+public void ExecuteGoal(){
+    if (currentGoal == null){
+        ReplanGoal();
+    }
+    else if (currentAction == null){
+        GetNextAction();
+    } 
+    else if (currentAction.IsViable() && currentGoal.IsViable(state)){
+        currentAction.OnUpdateAction();
+    }
+    else{
+        //Current Goal or Action no longer viable! Replan!
+        ReplanGoal();
+    }
+}
+                        </code></pre>
                     </div>
                 </div>
             </div>
