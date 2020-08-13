@@ -76,9 +76,10 @@
             <!--=================== section start ====================-->
             <div class="section wb">
                 <div class="container-fluid">
-                    <div class="row no-gutters text-center">
+                    <div class="row no-gutters">
                         <p>
-
+                            To stay alive in this game, you have to keep reinforcing and rebuilding the ships walls. Because they player is not getting any oxygen when he is in a room with a missing wall.
+                            Several scripts need to know if there is a breach in the spaceship. So I thought this was the right moment to learn more about events and how to use them.
                         </p>
                     </div>
                 </div>
@@ -89,13 +90,18 @@
                 <div class="container-fluid">
                     <div class="row no-gutters">
                         <pre><code>
-p { 
-    color: red;
+public static event System.Action<GameObject> roomBreachedImpact;
+
+public void RoomBreachedImpact(GameObject breachedRoom){
+    if (roomBreachedImpact != null){
+        roomBreachedImpact(breachedRoom);
+    }
 }
-body { 
-    background-color: #eee;
+
+private void Start(){
+    PlayerController.roomBreachedImpact += CheckRoomsForBreaches;
 }
-						</code></pre>
+</code></pre>
                     </div>
                 </div>
             </div>
@@ -103,12 +109,63 @@ body {
             <!--=================== section start ====================-->
             <div class="section wb">
                 <div class="container-fluid">
-                    <div class="row no-gutters text-center">
+                    <div class="row no-gutters">
                         <p>
-                            LLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
-
-                            Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.
+                            This was also one of the few groups projects that we had a sound designer in our group. So that means that I had the opportunity to play with some sound effects.
+                            To make it easy for the sound designer, I made a simple editor script where he can easily fill in the sound effects.
                         </p>
+                    </div>
+                </div>
+            </div>
+            <!--=================== section end ====================-->
+            <!--=================== section start ====================-->
+            <div class="section lb">
+                <div class="container-fluid">
+                    <div class="row no-gutters">
+                        <pre><code>
+public static AudioManager instance;
+
+public SoundGroup[] soundGroups;
+private Dictionary<string, AudioClip[]> soundGroupsDictionary = new Dictionary<string, AudioClip[]>();
+
+private void Awake(){
+    if (instance == null){
+        instance = this;
+    }
+    else{
+        Destroy(gameObject);
+    }
+    
+    foreach (SoundGroup soundGroup in soundGroups){
+        groupDictionary.Add(soundGroup.GroupID, soundGroup.group);
+    }
+}
+                           
+public AudioClip GetRandomClipFromName(string name){
+    if (soundGroupsDictionary.ContainsKey(name)){
+        AudioClip[] sounds = soundGroupsDictionary[name];
+        return sounds[Random.Range(0, sounds.Length)];
+    }
+
+    return null;
+}
+
+public AudioClip GetClipFromName(string name, int index){
+    if (soundGroupsDictionary.ContainsKey(name)){
+        AudioClip[] sounds = soundGroupsDictionary[name];
+        return sounds[index];
+    }
+
+    return null;
+}
+
+[System.Serializable]
+public class SoundGroup{
+    public string GroupID;
+    public AudioClip[] group;
+}
+
+</code></pre>
                     </div>
                 </div>
             </div>
