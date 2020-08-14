@@ -74,7 +74,7 @@
                 </div>
             </div>
 
-            <!--=================== section start ====================-->
+            <!--=================== section start ====================
             <div class="section wb">
                 <div class="container-fluid">
                     <div class="row no-gutters text-center">
@@ -90,7 +90,63 @@
                 <div class="container-fluid">
                     <div class="row no-gutters">
                         <pre><code>
+void AimShoot(){
+    Vector3 velocityVector = transform.forward * initialVelocity;
+    LineRenderer.SetVertexCount((int)(maxTime / timeResolution));
+    int index = 0;
+    Vector3 currentPosition = transform.position;
 
+    if (shoot){
+        LineRenderer.enabled = true;
+        landingPointDisplay.SetActive(true);
+       
+        if (landingPointInstance != null){
+            landingPointInstance.SetActive(true);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.L)){
+            objectToSpawn.SetActive(true);
+            Instantiate(objectToSpawn, spawnPos.transform.position, transform.rotation);
+            landingPointDisplay.SetActive(false);
+            landingPointInstance.SetActive(false);
+            LineRenderer.enabled = false;
+            shoot = false;
+        }
+        
+        for (float t = 0.0f; t < maxTime; t += timeResolution){
+            LineRenderer.SetPosition(index, currentPosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(currentPosition, velocityVector, out hit, velocityVector.magnitude * timeResolution, layerMask)){
+                LineRenderer.SetVertexCount(index + 2);
+                LineRenderer.SetPosition(index + 1, hit.point);
+                
+                if (landingPointDisplay != null){
+                    if (landingPointInstance != null){
+                        if (hit.transform.gameObject.name.Contains("Building") || hit.transform.gameObject.name.Contains("Cube")){
+                            landingPointDisplay.SetActive(true);
+                            landingPointInstance.transform.position = hit.point;
+                        }
+                    }
+                    else if (hit.transform.gameObject.name.Contains("Building")){
+                        landingPointInstance = Instantiate(landingPointDisplay, hit.point, Quaternion.identity) as GameObject;
+                        landingPointDisplay.SetActive(true);
+                    }
+                }
+                break;
+            }
+            else{
+                if (landingPointInstance != null){
+                    landingPointDisplay.SetActive(false);
+                }
+            }
+
+            currentPosition += velocityVector * timeResolution;
+            velocityVector += Physics.gravity * timeResolution;
+            index++;
+        }
+    }
+}
 						</code></pre>
                     </div>
                 </div>

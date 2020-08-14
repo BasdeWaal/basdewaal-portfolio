@@ -87,8 +87,14 @@
                 <div class="container-fluid">
                     <div class="row no-gutters">
                         <pre><code>
+Vector3 tilt = Input.acceleration;
 
-						</code></pre>
+if (isFlat){
+    tilt = Quaternion.Euler(eulerAngel, 0, 0) * tilt;
+}
+
+rigid.AddForce(tilt, ForceMode2D.Impulse);
+</code></pre>
                     </div>
                 </div>
             </div>
