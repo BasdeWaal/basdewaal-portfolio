@@ -11,7 +11,7 @@ body.main .navbar-nav span {
 }
 
 body.main .sidebar-nav li:hover a {
-    background: #736043;
+    background: #d1bf9f;
 	color: #ffffff;
 }
 
@@ -33,7 +33,7 @@ body.main .nav-pills > li.active > a:focus,
 body.main .nav-pills > li.active > a:hover,
 body.main .icon-wrapper:hover i{
     color: #ffffff;
-    background: #736043;   
+    background: #d1bf9f;   
 }
 
 body.main .grd1 {
@@ -63,15 +63,15 @@ body.main .icon-wrapper:hover i:hover{
 body.main .grd1:hover,
 body.main .grd1:focus {
 	color: #ffffff;
-    background: #736043;
+    background: #d1bf9f;
 }
 
 body.main .cac:hover{
-	background: #736043;
+	background: #d1bf9f;
 }
 
 body.main .effect-1:after {
-    box-shadow: 0 0 0 2px #736043;
+    box-shadow: 0 0 0 2px #d1bf9f;
 }
 
 body.main {    
@@ -101,7 +101,7 @@ body.main .menuopener {
     position: fixed;
     top: 15px;
    /* left: 15px;*/
-    background-color: #736043;
+    background-color: #d1bf9f;
     z-index: 111;
     color: #fff !important;
     width: 50px;
@@ -161,7 +161,7 @@ body.main .contact_form .btn {
 }
 
 body.main .contact_form .btn.subt{
-	background: #736043;
+	background: #d1bf9f;
 }
 
 body.main .section.db,
