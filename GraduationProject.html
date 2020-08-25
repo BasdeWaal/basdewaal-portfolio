@@ -164,9 +164,7 @@ public static void Start(int maxPlayers, int port){
                 <div class="container-fluid">   
                     <div class="row no-gutters">
                         <p>
-                            For this project I implemented a UDP (User Datagram Protocol) and TCP (Transmission Control Protocol) connection. Mainly I have used TCP because it is a bit more reliable. UDP is better to use when I can miss one data cycle for example.
-                            So when I established a connection I am able to send and receive data from the server. So when the player opens the app the game tries to connect to the server. Ones connected the server is gone check if its a new player or not. If so the player needs to fill in a username.
-                            The server then saves the username and player in the database and the player is ready to start a match. Because we know which player connected to the server we are able to save some player data in the database (see images).
+                            For this project I implemented a UDP (User Datagram Protocol) and TCP (Transmission Control Protocol) connection. Mainly I have used TCP because it is a more reliable. UDP is better to use when I can miss one data cycle for example. So when I establish a connection I am able to send and receive data from the server. So when the player opens the app, the game tries to connect to the server. Ones connected the server is going to check if it is a new player or not. If so the player needs to fill in a username. The server then saves the username and player in the database and the player is ready to start a match. Because we know which player is connected to the server we are able to save player data in the database (see images).
                         </p>
                     </div>
                 </div>
@@ -192,14 +190,10 @@ public static void Start(int maxPlayers, int port){
                 <div class="container-fluid">
                     <div class="row no-gutters">
                         <p>
-                            When the player wants to start a match, he first sends a packet to the server asking if he can play. If the server allows the player to start a match, the server puts the player in to a lobby to wait for an opponent.
-                            Ones there is another player that willing to play a match. The server checks if there is a lobby available to join and adds the player to it, If not the server creates a new lobby.
-                            When both players are ready. The server sends a message to both players with the map info. The info tells the players where the player can find certain resources and where each players base building is placed on the map. If both players fully loaded the map the server tels both players to start the countdown. Ones its zero the match starts. Both players are now able to place buildings, create troops and so on.
+                            When the player wants to start a match, he first sends a packet to the server asking if he is allowed play. If the server allows the player to start a match, the server puts the player in to a lobby to wait for an opponent. Ones there is another player that is willing to play a match, the server checks if there is a lobby available to join and adds the player to it. If not the server creates a new lobby. When both players are ready, the server sends a message to both players with the map info. The info tells the players where they can find certain resources and where each players base building can be found on the map. If both players fully loaded the map the server tells both players to start the countdown. Ones its zero the match starts. Both players are now able to place buildings, create troops and to engage the fight.
                         </p>
                         <p>
-                            With an RTS game like this you usually move a lot of troops at the same time. To make it a bit easier on mobile I implemented some kind of grouping mechanic. So when a unit is spawned and it spawns near a the same unit it automaticly group of it.
-                            When the player tries to move a unit that's in a group, it automatically moves the whole group. This makes it easier to move a lot of troops/units at the same time. Attacking works kinde simulair. If one unit in a group starts to attack the whole groups starts to attack.
-                            So for example if one unit in the group is getting in range of an enemy, it tells the whole group that there is an enemy in range and we should attack.
+                            With a RTS game like this you usually move a lot of troops at the same time. To make it a bit easier on mobile I implemented a kind of grouping mechanic. So when a troop unit is spawned near a similar unit it automatically groups with it. When the player tries to move a unit that's in a group, it automatically moves the whole group. This makes it easier to move a lot of troop units at the same time. Attacking works on a similar bases. If one unit in a group starts to attack the whole group starts to attack. So for example if one unit in the group is getting in range of an enemy, it tells the whole group that there is an enemy in range and they should attack.
                         </p>
 
                         <p>
@@ -219,12 +213,10 @@ public static void Start(int maxPlayers, int port){
                             <p></p>
                         </div>
                         <p>
-                            These characteristics give me the opportunity create a lot of different units. For example i've got units that can only attack buildings. Units can be ranged or melee, air or ground, i've got buildings and troops and so on.
+                            These characteristics give me the opportunity create a lot of different units. For example: There are units that can only attack buildings. Units can be ranged or melee, air or ground, as there are buildings, troops and so on.
                         </p>
                         <p>
-                            But most importantly everything is validated on the server. If the player wants to perform an action. The player sends a packet to the server with the action he wants to perform and if necessary some additional information.
-                            The server checks if this is possible. If this is the case the server sends the action to all the players in the match. Each player then performs this action.
-                        </p>
+                            But most import, everything is validated on the server. If the player wants to perform an action, the player sends a packet to the server with the action he wants to perform. The server checks if this is possible. If so the server sends the action to all the players in the match. Each player then performs this action.                        </p>
                     </div>
                 </div>
             </div>

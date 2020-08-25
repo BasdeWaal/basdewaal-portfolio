@@ -76,10 +76,7 @@
                 <div class="container-fluid">
                     <div class="row no-gutters ">
                         <p>
-                            My dungeon generator is based on characters. That means that each piece of my dungeon is linked to a certain character. So characters like ─ │ ┌ ┐ stands for a horizontal dungeon piece a vertical, a corner to right and a corner piece to the left.
-                            Then I had to write out for each character which characters he could have as neighbors. After that, I made a 2d array that represents the dungeon (see images). First I fill the array with the amount of rooms I want to have. The next step is to fill in the rest of the array.
-                            I iterate over each array slot, that is not filled yet, and try to find the best character that fits in that specific array slot according to the neighbor rules we made earlier.
-                            Finally I check if there are any dead ends. If so, I close de dungeon with a dead end prefab and I check if there are unreachable parts in the dungeon and remove those parts.
+                            My dungeon generator is based on characters. That means that each piece of my dungeon is linked to a particular character. So characters like ─ │ ┌ ┐ stands for a horizontal dungeon piece or a vertical, a corner piece to right or a corner piece to the left. Then I had to write out for each character which characters he could have as neighbours. After that, I made a 2d array that represents the dungeon (see images). First the generator fills the array with the amount of rooms I want to have. The next step is to fill in the rest of the array. I iterate over each array slot, that is not filled yet, and try to find the best character that fits in that specific array slot according to the neighbour rules we made earlier. Finally I check if there are any dead ends. If so, I close de dungeon with a dead end prefab and I check if there are unreachable parts in the dungeon and remove those parts.
                         </p>
                     </div>
                 </div>
@@ -129,8 +126,7 @@ public void InitializeDungeon(){
                 <div class="container-fluid">
                     <div class="row no-gutters">
                         <p>
-                            Regarding the AI ​​I implemented a GOAP (Goal Oriented Action Planning) agent.
-                            How does the algorithm know which actions go together to satisfy a goal? Actions and goals use conditions, which consists of a string and a value. The action 'Attack Ranged' for example has the precondition [ "hasRangedWeapon", true ]. The action 'Equip Ranged Weapon' has the effect [ "hasRangedWeapon", true ]. Thus the algorithm knows to first equip the ranged weapon, and then use it to attack. This leads to natural, dynamic behavior without ever having to code any transitions!
+                            Regarding the AI, I implemented a GOAP (Goal Oriented Action Planning) agent. How does the algorithm know which actions go together to satisfy a goal? Actions and goals use conditions, which are consisting of a string and a value. The action 'Attack Ranged' for example has the precondition [ "hasRangedWeapon", true ]. The action 'Equip Ranged Weapon' has the effect [ "hasRangedWeapon", true ]. Thus the algorithm knows to first equip the ranged weapon, and then use it to attack. This leads to natural, dynamic behaviour without ever having to code any transitions!
                         </p>
                     </div>
                 </div>

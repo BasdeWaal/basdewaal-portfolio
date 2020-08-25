@@ -82,7 +82,7 @@
                 <div class="container-fluid">
                     <div class="row no-gutters">
                         <p>
-                            Like mentioned before each player has different abilities. For this we made an ability system. The ability system is based on scriptable objects. A ScriptableObject is a data container that you can use to save large amounts of data, independent of class instances and it makes it easy to change and add new abilities.
+                            As mentioned before each player has different abilities. For this we made an ability system. The ability system is based on ScriptableObjects. A ScriptableObject is a data container. You can use it to save large amounts of data, independent of class instances and it makes it easy to change and add new abilities.
                         </p>
                     </div>
                 </div>
@@ -118,8 +118,7 @@ public abstract class Ability : ScriptableObject{
                 <div class="container-fluid">
                     <div class="row no-gutters">
                         <p>
-                            Most game mechanics in this game relay on a collision check. Because it's a 2D game we can call the OnCollisionEnter2D function. But to see if we can deal damage to an object, we check for the IAttackable interface.
-                            If an object contains the IAttackable interface we can deal damage to it. For instance the snake has a derives from the IAttackable interface.
+                            Most game mechanics in this game relay on a collision check. Because it's a 2D game we can call the OnCollisionEnter2D function. But to see if we can deal damage to an object, we check for the IAttackable interface. If an object contains the IAttackable interface we can deal damage to it. For instance the snake derives from the IAttackable interface.
                         </p>
                     </div>
                 </div>
